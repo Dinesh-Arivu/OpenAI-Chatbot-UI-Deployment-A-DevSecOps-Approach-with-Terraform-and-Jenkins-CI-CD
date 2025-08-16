@@ -84,5 +84,14 @@ pipeline {
                 sh 'docker run -d --name chatbotui -p 3000:3000 dinesh1097/chatbotui:latest'
             }
         }
+        stage('Deploy to kubernets'){
+            steps{
+                script{
+                    withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'k8s', namespace: '', restrictKubeConfigAccess: false, serverUrl: '') {
+                       sh 'kubectl apply -f K8S/deployment.yaml'
+                  }
+                }
+            }
+        }
     }
 }
