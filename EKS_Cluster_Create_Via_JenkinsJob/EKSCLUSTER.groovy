@@ -3,7 +3,7 @@ pipeline{
     stages {
         stage('Checkout from Git'){
             steps{
-                git branch: 'main', url: 'https://github.com/Dinesh-Arivu/Uber-Clone-App-Deployment-A-DevSecOps-Approach-with-Terraform-and-Jenkins-CI-CD.git'
+                git branch: 'legacy', url: 'https://github.com/Dinesh-Arivu/OpenAI-Chatbot-UI-Deployment-A-DevSecOps-Approach-with-Terraform-and-Jenkins-CI-CD.git'
             }
         }
         stage('Terraform version'){
